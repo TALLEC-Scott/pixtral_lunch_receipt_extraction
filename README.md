@@ -17,11 +17,13 @@ Here's how it works:
 
 
 ## Example 
+### Input: 
+![lunch_receipt_04_23_2012](https://github.com/user-attachments/assets/6bf85e4d-8b66-4baa-801f-541085c78de1)
 
-```json {
+### Output:
+```json
+{
   "total_price": "5.08",
   "date": "23-04-2012"
 }
 ```
-
-![lunch_receipt_04_23_2012](https://github.com/user-attachments/assets/6bf85e4d-8b66-4baa-801f-541085c78de1)
