@@ -81,10 +81,11 @@ def main():
         messages=messages,
         response_format={
             "type": "json_object",
-        }
+        },
+        temperature=0.0
     )
 
-    # The Mistral API should return a JSON string in chat_response.choices[0].message.content
+    # The Mistrall API should return a JSON string in chat_response.choices[0].message.content
     response_content = chat_response.choices[0].message.content.strip()
     print("Raw response content:\n", response_content)
 
