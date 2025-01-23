@@ -14,11 +14,9 @@ def encode_image(image_path):
         with open(image_path, "rb") as image_file:
             return base64.b64encode(image_file.read()).decode('utf-8')
     except FileNotFoundError:
-        print(f"Error: The file {image_path} was not found.")
-        return None
+        raise FileNotFoundError(f"Error: The file {image_path} was not found.")
     except Exception as e:  # General exception handling
-        print(f"Error: {e}")
-        return None
+        raise RuntimeError(f"Error encoding image: {e}")
 
 
 def main():
@@ -77,7 +75,7 @@ def main():
 
     # Send request to Mistral model
     chat_response = client.chat.complete(
-        model="pixtral-12b-2409",
+        model="pixtral-12b-2409", #free model. You can also use 'pixtral-large-latest'
         messages=messages,
         response_format={
             "type": "json_object",
